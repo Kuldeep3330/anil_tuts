@@ -1,13 +1,14 @@
-import UndoRedo_1 from './30react/1.UndoRedo'
-import Dropdown from './30react/2.CloseDropdown'
-import InlineEditable from './30react/3.InlineEditableInput'
-import TempConvertor from './30react/4.Temperature'
-import OtpInput from './30react/5.OtpInput'
+import UndoRedo_1 from './sangam/1.UndoRedo'
+import Dropdown from './sangam/2.CloseDropdown'
+import InlineEditable from './sangam/3.InlineEditableInput'
+import TempConvertor from './sangam/4.Temperature'
+import OtpInput from './sangam/5.OtpInput'
 import './App.css'
 import Apple from './lecture1/Apple'
 import Child from './lecture1/Child'
 import Header from './lecture1/Header'
 import Lecture from './lecture1/Lecture'
+import CountdownTimer from './imran/1.CountDown'
 
 function App() {
   const people = [
@@ -53,7 +54,8 @@ function App() {
     {/* <Dropdown/> */}
     {/* <InlineEditable/> */}
     {/* <TempConvertor/> */}
-    <OtpInput/>
+    {/* <OtpInput/> */}
+    <CountdownTimer/>
     </>
   )
 }
