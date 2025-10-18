@@ -1,4 +1,7 @@
 import UndoRedo_1 from './30react/1.UndoRedo'
+import Dropdown from './30react/2.CloseDropdown'
+import InlineEditable from './30react/3.InlineEditableInput'
+import TempConvertor from './30react/4.Temperature'
 import './App.css'
 import Apple from './lecture1/Apple'
 import Child from './lecture1/Child'
@@ -45,7 +48,10 @@ function App() {
       email={person.email} 
     />
   ))} */}
-    <UndoRedo_1/>
+    {/* <UndoRedo_1/> */}
+    {/* <Dropdown/> */}
+    {/* <InlineEditable/> */}
+    <TempConvertor/>
     </>
   )
 }
