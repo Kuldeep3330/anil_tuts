@@ -9,6 +9,8 @@ import Child from './lecture1/Child'
 import Header from './lecture1/Header'
 import Lecture from './lecture1/Lecture'
 import CountdownTimer from './imran/1.CountDown'
+import FAQ from './imran/2.Faq'
+import Post from './aman/pagination/Post'
 
 function App() {
   const people = [
@@ -55,7 +57,9 @@ function App() {
     {/* <InlineEditable/> */}
     {/* <TempConvertor/> */}
     {/* <OtpInput/> */}
-    <CountdownTimer/>
+    {/* <CountdownTimer/> */}
+    {/* <FAQ/> */}
+    <Post/>
     </>
   )
 }
