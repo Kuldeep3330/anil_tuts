@@ -10,7 +10,8 @@ import Header from './lecture1/Header'
 import Lecture from './lecture1/Lecture'
 import CountdownTimer from './imran/1.CountDown'
 import FAQ from './imran/2.Faq'
-import Post from './aman/pagination/Post'
+// import Post from './aman/pagination/Post'
+import Accordion from './sangam/6.Accordion'
 
 function App() {
   const people = [
@@ -59,7 +60,8 @@ function App() {
     {/* <OtpInput/> */}
     {/* <CountdownTimer/> */}
     {/* <FAQ/> */}
-    <Post/>
+    {/* <Post/> */}
+    <Accordion/>
     </>
   )
 }
