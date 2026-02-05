@@ -1,17 +1,33 @@
 import UndoRedo_1 from './sangam/1.UndoRedo'
 import Dropdown from './sangam/2.CloseDropdown'
 import InlineEditable from './sangam/3.InlineEditableInput'
-import TempConvertor from './sangam/4.Temperature'
+import TempConvertor from './sangam/input_type/4.Temperature'
 import OtpInput from './sangam/5.OtpInput'
 import './App.css'
 import Apple from './lecture1/Apple'
 import Child from './lecture1/Child'
 import Header from './lecture1/Header'
 import Lecture from './lecture1/Lecture'
-import CountdownTimer from './imran/1.CountDown'
+import CountdownTimer from './imran/countDown/1.CountDown'
 import FAQ from './imran/2.Faq'
 // import Post from './aman/pagination/Post'
-import Accordion from './sangam/6.Accordion'
+import Accordion from './sangam/input_type/6.Accordion'
+import ContactForm from './sangam/input_type/7.FeedbackForm'
+// import ProgressBars from './sangam/9.ProgressBar'
+import HolyGrail from './sangam/input_type/holyGrail/8.Holy'
+import MortgageCalculator from './sangam/input_type/10.MortgageCalculator'
+import FlightBooker from './sangam/input_type/11.FlightBooking'
+import ProgressBar from './sangam/13.ProgressBar'
+import TemperatureConverter from './sangam/input_type/14.Temperature'
+import Tabs from './sangam/15.TabComponent'
+import DiceRoller from './sangam/input_type/17.DiceRoller'
+import Tweet from './sangam/16.Tweet'
+import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
+import Parent from './aman/Reducer/2.Example/Parent'
+// import Parent from './aman/context_api/2.Example/Parent'
+// import Parent from './aman/Reducer/1.Example/Parent'
+// import Parent from './aman/context_api/2.Example/Parent'
+// import Parent from './aman/context_api/1.Example/Parent'
 
 function App() {
   const people = [
@@ -61,7 +77,35 @@ function App() {
     {/* <CountdownTimer/> */}
     {/* <FAQ/> */}
     {/* <Post/> */}
-    <Accordion/>
+    {/* <Accordion/>
+     */}
+     {/* <ContactForm/> */}
+     {/* <ProgressBars/> */}
+     {/* <HolyGrail/> */}
+     {/* <MortgageCalculator/> */}
+     {/* <FlightBooker/> */}
+     {/* <GenerateTable/> */}
+     {/* <ProgressBar/> */}
+     {/* <TemperatureConverter/> */}
+     {/* <Tabs/> */}
+     {/* <HolyGrail/> */}
+     {/* <DiceRoller/> */}
+     {/* <Tweet
+        name="Life of Shift"
+        handle="@lifeofshift"
+        content="Night shift struggles are real 😴"
+        likes={45}
+        retweets={10}
+      /> */}
+      {/* <ModalOverlay/> */}
+      {/* <Parent/> */}
+
+      {/* <Parent/> */}
+      {/* <Parent/>
+       */}
+       {/* <Parent/> */}
+       <Parent/>
+      
     </>
   )
 }

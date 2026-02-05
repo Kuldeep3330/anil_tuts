@@ -1,0 +1,64 @@
+/* container full height */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header & footer */
+.header,
+.footer {
+  background: #333;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  /* width: 100%; */
+}
+
+/* middle 3-column layout */
+.middle {
+  flex: 1;
+  display: flex;
+}
+
+/* sidebars */
+.sidebar {
+  width: 200px;
+  background: #f2f2f2;
+  padding: 16px;
+}
+
+/* main content */
+.content {
+  flex: 1;
+  padding: 16px;
+  background: #e6f2ff;
+}
+
+
+/*
+
+smaller code using grid
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.middle {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+}
+
+*/
+
+/* responsive design for smaller screens */
+@media (max-width: 768px) {
+  .middle {
+    flex-direction: column;
+  }
+
+  /* .sidebar {
+    width: 100%;
+  } */
+}
