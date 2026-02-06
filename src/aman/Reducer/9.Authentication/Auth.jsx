@@ -1,14 +1,15 @@
 import AuthProvider from "./AuthProvider";
-import Home from "./Home";
+import UserAuth from "./UserAuth";
 
 
-function App(){
 
+function Auth(){
     return(
         <AuthProvider>
-            <Home/>
+            <UserAuth/>
         </AuthProvider>
     )
+
 }
 
-export default App;
+export default Auth;

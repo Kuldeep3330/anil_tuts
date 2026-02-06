@@ -24,6 +24,14 @@ import DiceRoller from './sangam/input_type/17.DiceRoller'
 import Tweet from './sangam/16.Tweet'
 import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
 import Parent from './aman/Reducer/2.Example/Parent'
+import Top from './aman/Reducer/3.Example/Top'
+import Color from './aman/Reducer/4.Example/Color'
+// import Auth from './aman/Reducer/6.Example/Auth'
+import Theme from './aman/Reducer/7.ThemeToggle/Theme'
+import Counter from './aman/Reducer/8.GlobalCounter/Counter'
+import Auth from './aman/Reducer/9.Authentication/Auth'
+import Lang from './aman/Reducer/10.Language/Lang'
+import Notifiaction from './aman/Reducer/11.Notification/Notifiaction'
 // import Parent from './aman/context_api/2.Example/Parent'
 // import Parent from './aman/Reducer/1.Example/Parent'
 // import Parent from './aman/context_api/2.Example/Parent'
@@ -104,7 +112,16 @@ function App() {
       {/* <Parent/>
        */}
        {/* <Parent/> */}
-       <Parent/>
+       {/* <Parent/> */}
+       {/* <Top/> */}
+       {/* <Color/> */}
+       {/* <Auth/> */}
+       {/* <Theme/> */}
+       {/* <Counter/> */}
+       {/* <Auth/> */}
+       {/* <Lang/> */}
+       <Notifiaction/>
+
       
     </>
   )
