@@ -5,15 +5,15 @@ function OtpInput() {
     const inputsRef = useRef([]);
 
     const handleOtpChange = (value, idx) => {
-        const newOtp = [...otp]
-        newOtp[idx] = value.slice(-1);
+        const newOtp = [...otp]//array copy
+        newOtp[idx] = value.slice(-1);//agar user multiple values dega to sirf last value lo
         setOtp(newOtp)
 
-        if (value && idx < otp.length - 1) {
+        if (value && idx < otp.length - 1) { //auto focus next input
             inputsRef.current[idx + 1].focus();
         }
     }
-
+    //Backspace logic
     const handleKeyDown = (idx, e) => {
         console.log(e.key);
         if (e.key === "Backspace" && !otp[idx] && idx > 0) {
@@ -28,8 +28,7 @@ function OtpInput() {
             {otp.map((digit, idx) => (
                 <input
                     key={idx}
-                    type="text"
-                    maxLength={1}
+                    type="text" //Jab type="number" use karte hain tab: backspace / arrows ka behaviour messy ho jata hai isliye OTP ke liye text hi better hota hai
                     value={digit}
                     onChange={(e) => handleOtpChange(e.target.value, idx)}
                     onKeyDown={(e) => handleKeyDown(idx, e)}
@@ -41,7 +40,6 @@ function OtpInput() {
                         fontSize: "18px",
                         margin: "5px",
                     }}
-                    autoFocus={idx === 0}
                 />
             ))}
             <p style={{ marginTop: "20px" }}>OTP Entered: {otpValue}</p>

@@ -1,6 +1,6 @@
 import UndoRedo_1 from './sangam/1.UndoRedo'
 import Dropdown from './sangam/2.CloseDropdown'
-import InlineEditable from './sangam/3.InlineEditableInput'
+import InlineEditable from './sangam/InlineEditable/3.InlineEditableInput'
 import TempConvertor from './sangam/input_type/4.Temperature'
 import OtpInput from './sangam/5.OtpInput'
 import './App.css'
@@ -32,6 +32,12 @@ import Counter from './aman/Reducer/8.GlobalCounter/Counter'
 import Auth from './aman/Reducer/9.Authentication/Auth'
 import Lang from './aman/Reducer/10.Language/Lang'
 import Notifiaction from './aman/Reducer/11.Notification/Notifiaction'
+import Todo from './sangam/17.Todo'
+import Cart from './aman/Reducer/12.ShoppingCart/Cart'
+import MultiStepForm from './imran/5.MultiStepForm/MultiStepForm'
+import ShoppingList from './imran/4.shoppingList/ShoppingList'
+import SimpleEditableList from './sangam/InlineEditable/InlineEditable'
+import StarRating from './imran/8.StarRating'
 // import Parent from './aman/context_api/2.Example/Parent'
 // import Parent from './aman/Reducer/1.Example/Parent'
 // import Parent from './aman/context_api/2.Example/Parent'
@@ -80,6 +86,7 @@ function App() {
     {/* <UndoRedo_1/> */}
     {/* <Dropdown/> */}
     {/* <InlineEditable/> */}
+    {/* <SimpleEditableList/> */}
     {/* <TempConvertor/> */}
     {/* <OtpInput/> */}
     {/* <CountdownTimer/> */}
@@ -120,7 +127,13 @@ function App() {
        {/* <Counter/> */}
        {/* <Auth/> */}
        {/* <Lang/> */}
-       <Notifiaction/>
+       {/* <Notifiaction/> */}
+       {/* <Todo/> */}
+
+       {/* <Cart/> */}
+       {/* <MultiStepForm/> */}
+       {/* <ShoppingList/> */}
+       <StarRating/>
 
       
     </>

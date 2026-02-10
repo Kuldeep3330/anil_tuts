@@ -11,14 +11,21 @@ import { useState } from "react"
 
 function UndoRedo_1(){
     const[count, setCount]=useState(0);
-    const [past, setPast]=useState([])
-    const [future, setFuture]=useState([])
+    const [past, setPast]=useState([])//purani values (Undo ke liye)
+    const [future, setFuture]=useState([])//undo ke baad wali values (Redo ke liye)
 
+    /**
+     * Action (inc/dec)
+    → past push
+    → count change
+    → future clear
+     */
     const increment=()=>{
-        setPast([...past, count]);//// save current count to past
-          
+        setPast([...past, count]);//current value ko past me save
+         //past = [0,1,2,3,4]
+         //count=5 
         setCount(prev=>prev+1);     
-        setFuture([]); // clear redo history       
+        setFuture([]); // redo history clear     
     }
     const decrement=()=>{
         setPast([...past, count]);
@@ -26,15 +33,27 @@ function UndoRedo_1(){
         setCount(prev=> prev>0?prev-1:0);        
         setFuture([]);
     }
+    /**
+     * Undo
+    → past se nikala
+    → count ko future me daala
+    → count = previous
+     */
     const undo=()=>{
         if(past.length === 0) return;
-        const previous = past[past.length-1];
-        const newPast= past.slice(0, past.length-1);// removed last value from past
+        const previous = past[past.length-1];//last saved value
+        const newPast= past.slice(0, past.length-1);// past se last value hata di
 
-        setFuture([count, ...future])        
+        setFuture([count, ...future])//current count ko future ke front me daal diya        
         setPast(newPast);       
         setCount(previous);
     }
+    /**
+     * Redo
+    → future se nikala
+    → count ko past me daala
+    → count = next
+     */
     const redo=()=>{
         if(future.length === 0) return;
         const next=future[0];
@@ -51,8 +70,8 @@ function UndoRedo_1(){
             <div style={{display:"flex", justifyContent:"center", gap:"10px"}}>
             <button onClick={increment}>Increment</button>
             <button onClick={decrement}>Decrement</button>
-            <button onClick={undo}>Undo</button>
-            <button onClick={redo}>Redo</button>
+            <button onClick={undo} disabled={past.length === 0}>Undo</button>
+            <button onClick={redo} disabled={future.length === 0}>Redo</button>
             </div>
         </div>
     )

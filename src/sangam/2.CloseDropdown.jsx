@@ -26,19 +26,17 @@ function Dropdown() {
   }, []);
 
   return (
-    <div ref={dropdownRef} style={{ position: "relative", textAlign: "center", marginTop: "50px" }}>
+    <div ref={dropdownRef} style={{ textAlign: "center", marginTop: 50 }}>
       <button onClick={toggleDropdown}>Toggle Dropdown</button>
 
       {isOpen && (
         <div
           
           style={{
-            position: "absolute",
-            left: "50%",             
-            transform: "translateX(-50%)",           
-            border: "1px solid #ccc",
-            padding: "10px",
-            width: "150px",
+            border: "1px solid gray",
+            width: 150,
+            margin: "10px auto",
+            padding: 10
           }}
         >
           <p>Dropdown Item 1</p>
