@@ -5,20 +5,28 @@ function Todo() {
   const [task, setTask] = useState("");
 
   const addTodo = () => {
-    setTodos([...todos, { id: Date.now(), task, done: false }]);
+    const newTodo = {
+      id: Date.now(),
+      text: task,
+      done: false
+    };
+    setTodos([...todos, newTodo]);
     setTask("");
   };
 
   const toggleTodo = (id) => {
-    setTodos(
-      todos.map(t =>
-        t.id === id ? { ...t, done: !t.done } : t
-      )
+    const updated = todos.map(todo =>
+      todo.id === id
+        ? { ...todo, done: !todo.done }
+        : todo
     );
+
+    setTodos(updated);
   };
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter(t => t.id !== id));
+    const filtered = todos.filter(todo => todo.id !== id);
+    setTodos(filtered);
   };
 
   return (

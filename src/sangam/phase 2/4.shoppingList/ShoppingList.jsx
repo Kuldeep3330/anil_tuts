@@ -21,21 +21,22 @@ function ShoppingList() {
   }, [input]);
 
   const addItem = (item) => {
-    setList([...list, { id: Date.now(), name: item, done: false }]);
+    const newItem={ id: Date.now(), name: item, done: false }
+    setList([...list, newItem]);
     setInput("");
     setSuggestions([]);
   };
 
   const toggleDone = (id) => {
-    setList(
-      list.map(item =>
+    const updated=list.map(item =>
         item.id === id ? { ...item, done: !item.done } : item
       )
-    );
+    setList(updated);
   };
 
   const deleteItem = (id) => {
-    setList(list.filter(item => item.id !== id));
+    const filtered=list.filter(item => item.id !== id)
+    setList(filtered);
   };
 
   return (

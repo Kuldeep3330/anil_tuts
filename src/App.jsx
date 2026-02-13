@@ -9,7 +9,7 @@ import Child from './lecture1/Child'
 import Header from './lecture1/Header'
 import Lecture from './lecture1/Lecture'
 import CountdownTimer from './imran/countDown/1.CountDown'
-import FAQ from './imran/2.Faq'
+// import FAQ from './imran/2.Faq'
 // import Post from './aman/pagination/Post'
 import Accordion from './sangam/input_type/6.Accordion'
 import ContactForm from './sangam/input_type/7.FeedbackForm'
@@ -17,9 +17,9 @@ import ContactForm from './sangam/input_type/7.FeedbackForm'
 import HolyGrail from './sangam/input_type/holyGrail/8.Holy'
 import MortgageCalculator from './sangam/input_type/10.MortgageCalculator'
 import FlightBooker from './sangam/input_type/11.FlightBooking'
-import ProgressBar from './sangam/13.ProgressBar'
+import ProgressBar from './sangam/input_type/13.ProgressBar'
 import TemperatureConverter from './sangam/input_type/14.Temperature'
-import Tabs from './sangam/15.TabComponent'
+import Tabs from './sangam/input_type/15.TabComponent'
 import DiceRoller from './sangam/input_type/17.DiceRoller'
 import Tweet from './sangam/16.Tweet'
 import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
@@ -38,6 +38,7 @@ import MultiStepForm from './imran/5.MultiStepForm/MultiStepForm'
 import ShoppingList from './imran/4.shoppingList/ShoppingList'
 import SimpleEditableList from './sangam/InlineEditable/InlineEditable'
 import StarRating from './imran/8.StarRating'
+import Day1 from './sangam/input_type/Day1'
 // import Parent from './aman/context_api/2.Example/Parent'
 // import Parent from './aman/Reducer/1.Example/Parent'
 // import Parent from './aman/context_api/2.Example/Parent'
@@ -133,7 +134,8 @@ function App() {
        {/* <Cart/> */}
        {/* <MultiStepForm/> */}
        {/* <ShoppingList/> */}
-       <StarRating/>
+       {/* <StarRating/> */}
+       <Day1/>
 
       
     </>

@@ -11,6 +11,7 @@ function Dropdown() {
   useEffect(() => {
     // Function to handle clicks outside
     const handleClickOutside = (event) => {
+      //!dropdownRef.current.contains(event.target) Agar click dropdown ke andar nahi hua to close kar do.
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false); // close dropdown
       }
@@ -20,6 +21,7 @@ function Dropdown() {
     document.addEventListener("mousedown", handleClickOutside);
 
     // Cleanup listener when component unmounts
+    //Component unmount hone par listener hata do.(Component unmount hone par listener hata do)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

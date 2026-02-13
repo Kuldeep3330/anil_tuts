@@ -9,6 +9,11 @@ function OtpInput() {
         newOtp[idx] = value.slice(-1);//agar user multiple values dega to sirf last value lo
         setOtp(newOtp)
 
+        {/*
+            Condition ka matlab:
+                Agar user ne kuch type kiya
+                Aur ye last input nahi hai
+             */}
         if (value && idx < otp.length - 1) { //auto focus next input
             inputsRef.current[idx + 1].focus();
         }
@@ -16,6 +21,11 @@ function OtpInput() {
     //Backspace logic
     const handleKeyDown = (idx, e) => {
         console.log(e.key);
+    {/**Condition samjho:
+            Backspace dabaya
+            Current box empty hai
+            Pehla box nahi hai
+         */}
         if (e.key === "Backspace" && !otp[idx] && idx > 0) {
             inputsRef.current[idx - 1].focus();
         }
