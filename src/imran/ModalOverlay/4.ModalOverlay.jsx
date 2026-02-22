@@ -1,7 +1,6 @@
 
 
 import { useState } from 'react';
-import './Modal.css';
 import Modal from './Modal';
 
 export default function ModalOverlay() {

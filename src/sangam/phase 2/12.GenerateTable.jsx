@@ -13,7 +13,7 @@ function GenerateTable() {
     let count = 1;
 
     return (
-      <table border="1" cellPadding="8" style={{ borderCollapse: "collapse" }}>
+      <table>
         <tbody>
           {Array.from({ length: r }).map((_, rowIndex) => (
             <tr key={rowIndex}>

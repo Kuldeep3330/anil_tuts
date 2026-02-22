@@ -42,7 +42,10 @@ function OtpInput() {
                     value={digit}
                     onChange={(e) => handleOtpChange(e.target.value, idx)}
                     onKeyDown={(e) => handleKeyDown(idx, e)}
-                    ref={(el) => (inputsRef.current[idx] = el)}
+                    //har input ka alag reference chahiye.
+                    //inputRef.current[i] = el === Is index ke input ka DOM element array me store kar do
+                    ref={(el) => (inputsRef.current[idx] = el)} //<input ref={inputRef} />
+
                     style={{
                         width: "40px",
                         height: "40px",

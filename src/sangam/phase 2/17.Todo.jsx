@@ -31,7 +31,7 @@ function Todo() {
 
   return (
     <>
-      <input value={task} onChange={e => setTask(e.target.value)} />
+      <input value={task} onChange={e => setTask(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addTodo()} />
       <button onClick={addTodo}>Add</button>
 
       {todos.map(t => (

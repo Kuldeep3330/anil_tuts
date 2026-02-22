@@ -1,77 +1,81 @@
-import UndoRedo_1 from './sangam/1.UndoRedo'
-import Dropdown from './sangam/2.CloseDropdown'
-import InlineEditable from './sangam/InlineEditable/3.InlineEditableInput'
-import TempConvertor from './sangam/input_type/4.Temperature'
-import OtpInput from './sangam/5.OtpInput'
+// import UndoRedo_1 from './sangam/1.UndoRedo'
+// import Dropdown from './sangam/2.CloseDropdown'
+// import InlineEditable from './sangam/InlineEditable/3.InlineEditableInput'
+// import TempConvertor from './sangam/input_type/4.Temperature'
+// import OtpInput from './sangam/5.OtpInput'
+import Parent from './aman/context_api_2/1.example/Parent'
 import './App.css'
-import Apple from './lecture1/Apple'
-import Child from './lecture1/Child'
-import Header from './lecture1/Header'
-import Lecture from './lecture1/Lecture'
-import CountdownTimer from './imran/countDown/1.CountDown'
-// import FAQ from './imran/2.Faq'
-// import Post from './aman/pagination/Post'
-import Accordion from './sangam/input_type/6.Accordion'
-import ContactForm from './sangam/input_type/7.FeedbackForm'
-// import ProgressBars from './sangam/9.ProgressBar'
-import HolyGrail from './sangam/input_type/holyGrail/8.Holy'
-import MortgageCalculator from './sangam/input_type/10.MortgageCalculator'
-import FlightBooker from './sangam/input_type/11.FlightBooking'
-import ProgressBar from './sangam/input_type/13.ProgressBar'
-import TemperatureConverter from './sangam/input_type/14.Temperature'
-import Tabs from './sangam/input_type/15.TabComponent'
-import DiceRoller from './sangam/input_type/17.DiceRoller'
-import Tweet from './sangam/16.Tweet'
 import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
-import Parent from './aman/Reducer/2.Example/Parent'
-import Top from './aman/Reducer/3.Example/Top'
-import Color from './aman/Reducer/4.Example/Color'
-// import Auth from './aman/Reducer/6.Example/Auth'
-import Theme from './aman/Reducer/7.ThemeToggle/Theme'
-import Counter from './aman/Reducer/8.GlobalCounter/Counter'
-import Auth from './aman/Reducer/9.Authentication/Auth'
-import Lang from './aman/Reducer/10.Language/Lang'
-import Notifiaction from './aman/Reducer/11.Notification/Notifiaction'
-import Todo from './sangam/17.Todo'
-import Cart from './aman/Reducer/12.ShoppingCart/Cart'
-import MultiStepForm from './imran/5.MultiStepForm/MultiStepForm'
-import ShoppingList from './imran/4.shoppingList/ShoppingList'
-import SimpleEditableList from './sangam/InlineEditable/InlineEditable'
-import StarRating from './imran/8.StarRating'
-import Day1 from './sangam/input_type/Day1'
+import GenerateTable from './sangam/phase 2/12.GenerateTable'
+// import Apple from './lecture1/Apple'
+// import Child from './lecture1/Child'
+// import Header from './lecture1/Header'
+// import Lecture from './lecture1/Lecture'
+// // import CountdownTimer from './imran/countDown/1.CountDown'
+// // import FAQ from './imran/2.Faq'
+// // import Post from './aman/pagination/Post'
+// import Accordion from './sangam/input_type/6.Accordion'
+// import ContactForm from './sangam/input_type/7.FeedbackForm'
+// // import ProgressBars from './sangam/9.ProgressBar'
+// import HolyGrail from './sangam/input_type/holyGrail/8.Holy'
+// import MortgageCalculator from './sangam/input_type/10.MortgageCalculator'
+// import FlightBooker from './sangam/input_type/11.FlightBooking'
+// import ProgressBar from './sangam/input_type/13.ProgressBar'
+// import TemperatureConverter from './sangam/input_type/14.Temperature'
+// import Tabs from './sangam/input_type/15.TabComponent'
+// import DiceRoller from './sangam/input_type/17.DiceRoller'
+// import Tweet from './sangam/16.Tweet'
+// import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
+// import Parent from './aman/Reducer/2.Example/Parent'
+// import Top from './aman/Reducer/3.Example/Top'
+// import Color from './aman/Reducer/4.Example/Color'
+// // import Auth from './aman/Reducer/6.Example/Auth'
+// import Theme from './aman/Reducer/7.ThemeToggle/Theme'
+// import Counter from './aman/Reducer/8.GlobalCounter/Counter'
+// import Auth from './aman/Reducer/9.Authentication/Auth'
+// import Lang from './aman/Reducer/10.Language/Lang'
+// import Notifiaction from './aman/Reducer/11.Notification/Notifiaction'
+// import Todo from './sangam/17.Todo'
+// import Cart from './aman/Reducer/12.ShoppingCart/Cart'
+// import MultiStepForm from './imran/5.MultiStepForm/MultiStepForm'
+// import ShoppingList from './imran/4.shoppingList/ShoppingList'
+// import SimpleEditableList from './sangam/InlineEditable/InlineEditable'
+// import StarRating from './imran/8.StarRating'
+// import Day1 from './sangam/input_type/Day1'
+import CountdownTimer from './sangam/phase 2/countDown/SimpleCountDown'
 // import Parent from './aman/context_api/2.Example/Parent'
 // import Parent from './aman/Reducer/1.Example/Parent'
 // import Parent from './aman/context_api/2.Example/Parent'
 // import Parent from './aman/context_api/1.Example/Parent'
 
 function App() {
-  const people = [
-  {
-    name: "Alice Johnson",
-    age: 28,
-    email: "alice.johnson@example.com"
-  },
-  {
-    name: "Brian Smith",
-    age: 34,
-    email: "brian.smith@example.com"
-  },
-  {
-    name: "Catherine Lee",
-    age: 25,
-    email: "catherine.lee@example.com"
-  },
-  {
-    name: "David Kim",
-    age: 42,
-    email: "david.kim@example.com"
-  },
-  {
-    name: "Eva Martinez",
-    age: 30,
-    email: "eva.martinez@example.com"
-  }
-];
+//   const people = [
+//   {
+//     name: "Alice Johnson",
+//     age: 28,
+//     email: "alice.johnson@example.com"
+//   },
+//   {
+//     name: "Brian Smith",
+//     age: 34,
+//     email: "brian.smith@example.com"
+//   },
+//   {
+//     name: "Catherine Lee",
+//     age: 25,
+//     email: "catherine.lee@example.com"
+//   },
+//   {
+//     name: "David Kim",
+//     age: 42,
+//     email: "david.kim@example.com"
+//   },
+//   {
+//     name: "Eva Martinez",
+//     age: 30,
+//     email: "eva.martinez@example.com"
+//   }
+// ];
 
 
   return (
@@ -135,11 +139,79 @@ function App() {
        {/* <MultiStepForm/> */}
        {/* <ShoppingList/> */}
        {/* <StarRating/> */}
-       <Day1/>
+        
+       {/* <Day1/> */}
+       {/* <CountdownTimer/>
+        */}
+        {/* <CountdownTimer/> */}
+        {/* <GenerateTable/> */}
 
+        {/* <ModalOverlay/> */}
+
+        <Parent/>
       
     </>
   )
 }
-
 export default App
+
+// 
+
+// // import "./styles.css";
+// import { useState, useEffect } from "react";
+// /**
+//  * build a stopwatch
+//  */
+// function App() {
+//   const [sec, setSec] = useState(0);
+//   const [flag, setFlag] = useState(false);
+
+//   const handleStart = () => {
+//     setFlag((prev) => !prev);
+//   };
+//   const handleStop = () => {
+//     setFlag(false)
+//   };
+//   const handleReset = () => {
+//     setSec(0);
+//     setFlag(false)
+//   };
+
+//   useEffect(() => {
+//     let clearId;
+//     if (flag) {
+//       clearId = setTimeout(() => {
+//         setSec((prev) => prev - 1);
+//       }, 1000);
+//     }
+
+//     return () => {
+//       clearTimeout(clearId);
+//     };
+//   }, [sec, flag]);
+//   return (
+//     <div className="App">
+//       <h2>stopwatch</h2>
+//       {/* {!flag && (
+//         <div>
+//           <p>00</p>
+//           <button onClick={handleStart}> start</button>
+//         </div>
+//       )}
+//       {flag && (
+//         <div>
+//           <input type="number" onChange={handleChange} />
+//           <button onClick={handleStop}> stop</button>
+//           <button onClick={handleReset}> reset</button>
+//         </div>
+//       )} */}
+
+//       <h1> {sec}</h1>      
+//           <button onClick={handleStart}> Start</button>
+//       <button onClick={handleStop}> stop</button>
+//           <button onClick={handleReset}> reset</button>
+
+//     </div>
+//   );
+// }
+

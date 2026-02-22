@@ -7,7 +7,7 @@ function Dropdown() {
   const toggleDropdown = () => {
     setIsOpen(prev => !prev);
   };
-
+ 
   useEffect(() => {
     // Function to handle clicks outside
     const handleClickOutside = (event) => {

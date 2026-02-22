@@ -4,7 +4,7 @@ Show a number (the counter).
 Buttons: Increment, Decrement, Undo, and Redo.
 Counter can’t go below 0.
 Undo should revert to the previous value.
-Redo should move forward (if possible).
+Redo should move forward (if possible)............................
  */
 
 import { useState } from "react"
