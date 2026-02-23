@@ -3,10 +3,11 @@
 // import InlineEditable from './sangam/InlineEditable/3.InlineEditableInput'
 // import TempConvertor from './sangam/input_type/4.Temperature'
 // import OtpInput from './sangam/5.OtpInput'
-import Parent from './aman/context_api_2/1.example/Parent'
-import './App.css'
+// import Parent from './aman/context_api_2/1.example/Parent'
+// import TodoApp from './aman/Reducer_2/3.Example/TodoApp'
+// import './App.css'
 import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
-import GenerateTable from './sangam/phase 2/12.GenerateTable'
+// import GenerateTable from './sangam/phase 2/12.GenerateTable'
 // import Apple from './lecture1/Apple'
 // import Child from './lecture1/Child'
 // import Header from './lecture1/Header'
@@ -42,7 +43,11 @@ import GenerateTable from './sangam/phase 2/12.GenerateTable'
 // import SimpleEditableList from './sangam/InlineEditable/InlineEditable'
 // import StarRating from './imran/8.StarRating'
 // import Day1 from './sangam/input_type/Day1'
-import CountdownTimer from './sangam/phase 2/countDown/SimpleCountDown'
+// import Parent from './aman/Reducer_2/4.Example/Parent'
+import Parent from './aman/Reducer_2/shoppingCart/Parent'
+import TodoApp from './aman/redux/1.Example/TodoApp'
+// import TodoApp from './aman/redux/1.Example/TodoApp'
+// import CountdownTimer from './sangam/phase 2/countDown/SimpleCountDown'
 // import Parent from './aman/context_api/2.Example/Parent'
 // import Parent from './aman/Reducer/1.Example/Parent'
 // import Parent from './aman/context_api/2.Example/Parent'
@@ -148,70 +153,17 @@ function App() {
 
         {/* <ModalOverlay/> */}
 
-        <Parent/>
+        {/* <Parent/>
+         */}
+         {/* <TodoApp/> */}
+         {/* <Parent/> */}
+         <Parent/>
+         {/* <TodoApp/> */}
+
+
       
     </>
   )
 }
 export default App
-
-// 
-
-// // import "./styles.css";
-// import { useState, useEffect } from "react";
-// /**
-//  * build a stopwatch
-//  */
-// function App() {
-//   const [sec, setSec] = useState(0);
-//   const [flag, setFlag] = useState(false);
-
-//   const handleStart = () => {
-//     setFlag((prev) => !prev);
-//   };
-//   const handleStop = () => {
-//     setFlag(false)
-//   };
-//   const handleReset = () => {
-//     setSec(0);
-//     setFlag(false)
-//   };
-
-//   useEffect(() => {
-//     let clearId;
-//     if (flag) {
-//       clearId = setTimeout(() => {
-//         setSec((prev) => prev - 1);
-//       }, 1000);
-//     }
-
-//     return () => {
-//       clearTimeout(clearId);
-//     };
-//   }, [sec, flag]);
-//   return (
-//     <div className="App">
-//       <h2>stopwatch</h2>
-//       {/* {!flag && (
-//         <div>
-//           <p>00</p>
-//           <button onClick={handleStart}> start</button>
-//         </div>
-//       )}
-//       {flag && (
-//         <div>
-//           <input type="number" onChange={handleChange} />
-//           <button onClick={handleStop}> stop</button>
-//           <button onClick={handleReset}> reset</button>
-//         </div>
-//       )} */}
-
-//       <h1> {sec}</h1>      
-//           <button onClick={handleStart}> Start</button>
-//       <button onClick={handleStop}> stop</button>
-//           <button onClick={handleReset}> reset</button>
-
-//     </div>
-//   );
-// }
 
