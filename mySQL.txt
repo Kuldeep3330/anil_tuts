@@ -1,0 +1,209 @@
+DDL(Data Definition Language)
+CAD create alter drop truncate rename
+    CREATE TABLE users (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+    );
+    ALTER TABLE users ADD COLUMN age INT;
+    DROP TABLE users; Permanently delete karta hai (rollback nahi hota)
+DML (Data Manipulation Language)
+USDInr Update Select Delete Insert
+    INSERT INTO users (id, name) VALUES (1, 'Amit');
+    UPDATE users SET name='Rahul' WHERE id=1;
+    DELETE FROM users WHERE id=1;
+Diffrence b/w delete and truncate
+DCL (Data Control Language)
+Grant revoke
+    GRANT SELECT, INSERT ON mydb.* TO 'user1'@'localhost';
+    REVOKE INSERT ON mydb.* FROM 'user1'@'localhost';
+TCL (Transaction Control Language)
+START TRANSACTION COMMIT ROLLBACK SAVEPOINT
+    START TRANSACTION;
+    UPDATE accounts SET balance = balance - 100 WHERE id=1;
+    UPDATE accounts SET balance = balance + 100 WHERE id=2;
+    COMMIT;
+
+    SAVEPOINT sp1;
+    ROLLBACK TO sp1;
+ACID Atomicity, Consistency, Isolation, Durability
+Atomicity (All or Nothing) Transaction ya to pura execute hoga, ya bilkul nahi.
+Consistency Transaction ke baad DB valid state me hona chahiye.
+Constraints:
+Primary key
+Foreign key
+Unique
+Check constraint
+Consistency ka matlab:
+Before and after transaction → DB rules break nahi hone chahiye.
+Isolation Concurrent transactions ek dusre ko disturb na karein.
+Durability Commit ke baad data permanently stored rahega.
+
+
+🧵 1️⃣ STRING FUNCTIONS (Bahut puchte hain)
+🔹 Basic Functions
+1. LENGTH()  String ke bytes return karta hai
+2. CHAR_LENGTH() 👉 Actual characters count karta hai.
+    SELECT LENGTH(name) FROM users;
+3. CONCAT()
+    SELECT CONCAT(first_name, ' ', last_name) FROM users;
+4. LOWER() / UPPER()
+Case-insensitive search me kaam aata hai.
+5. TRIM()
+    SELECT TRIM(name) FROM users;
+Production me dirty data cleaning me useful.| aage picche ke space htata  hai
+🔹 Advanced String Functions
+6. SUBSTRING()
+    SELECT SUBSTRING(email, 1, 5) FROM users;
+7. REPLACE()
+    SELECT REPLACE(phone, '-', '') FROM users;
+8. INSTR() Substring position find karta hai.
+9. LEFT() / RIGHT()
+    SELECT LEFT(phone, 3) FROM users;
+📅 2️⃣ DATE FUNCTIONS (Highly Important)
+Production me 80% queries date pe hoti hain.
+🔹 Current Date/Time
+    SELECT NOW();
+    SELECT CURDATE();
+    SELECT CURTIME();
+🔹 Extracting Parts
+    SELECT YEAR(created_at);
+    SELECT MONTH(created_at);
+    SELECT DAY(created_at);
+🔹 DATE_FORMAT()
+    SELECT DATE_FORMAT(created_at, '%Y-%m');
+🔹 DATEDIFF()
+    SELECT DATEDIFF(NOW(), created_at);
+🔹 DATE_ADD() / DATE_SUB()
+    SELECT DATE_ADD(NOW(), INTERVAL 7 DAY);
+questions:-Subscription expiry logic me use hota hai.
+🔥 Interview Question:
+Last 7 days ke records fetch karo
+
+Wrong: WHERE DATEDIFF(NOW(), created_at) <= 7
+because ❌ Index ignore ho sakta hai.
+
+Correct: WHERE created_at >= NOW() - INTERVAL 7 DAY
+🔢 3️⃣ MATH FUNCTIONS
+ROUND() | CEIL() | FLOOR() | ABS() | MOD() | POWER() | RAND()[Random selection me use hota hai.]
+SELECT ROUND(12.456, 2);   -- 12.46
+ROUND(12.5) → 13 (normal rounding)
+SELECT FLOOR(12.9);  -- 12
+SELECT CEIL(12.1);   -- 13
+SELECT MOD(10,3);  -- 1
+SELECT ABS(-100);  -- 100
+SELECT POWER(2,3);  -- 8
+SELECT SQRT(16);  -- 4
+SELECT TRUNCATE(12.4567, 2);  -- 12.45
+ROUND → round karta hai 
+vs
+TRUNCATE → cut karta hai
+SELECT SIGN(-10);  -- -1
+SELECT * FROM users ORDER BY RAND() LIMIT 1;
+
+⚠️ Production me large table pe RAND() slow hota hai.
+🔥 Real Question: Percentage calculate karo
+SELECT 
+  (obtained_marks / total_marks) * 100 
+FROM students;
+
+⚠️⚠️⚠️⚠️ Integer division trap ya issue: ⚠️⚠️⚠️⚠️
+
+Use: (obtained_marks * 100.0 / total_marks)
+
+📊 4️⃣ AGGREGATE FUNCTIONS (Most Important)
+🔹 COUNT() |🔹 SUM() |🔹 AVG() |🔹 MIN() | MAX()
+SELECT COUNT(*) FROM users;
+Difference:
+COUNT(*) vs COUNT(column)
+
+NULL values ka difference interviewer puch sakta hai.
+
+🔥 GROUP BY + HAVING
+SELECT user_id, COUNT(*) 
+FROM orders
+GROUP BY user_id
+HAVING COUNT(*) > 5;
+
+HAVING = aggregate filter
+WHERE = row filter
+
+🔥 Interview Question:
+
+Second highest salary find karo
+
+Method 1:
+
+SELECT MAX(salary)
+FROM employees
+WHERE salary < (SELECT MAX(salary) FROM employees);
+
+Method 2 (Better):
+
+SELECT salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+🪟 Bonus: Window Functions (Advanced Level)
+ROW_NUMBER()
+SELECT 
+  name,
+  ROW_NUMBER() OVER (ORDER BY salary DESC)
+FROM employees;
+RANK() vs DENSE_RANK() Difference puchenge.
+PARTITION BY
+SELECT 
+  department,
+  name,
+  RANK() OVER (PARTITION BY department ORDER BY salary DESC)
+FROM employees;
+🧨 Common Interview Traps
+1️⃣ WHERE vs HAVING difference?
+2️⃣ COUNT(*) fast kyun hota hai?
+3️⃣ NULL handling kaise karte ho?
+IFNULL() | COALESCE()
+4️⃣ Group By without aggregate allowed hai?
+(MySQL me allowed but logically risky)
+
+
+⚙️ PART 2: BITWISE FUNCTIONS (Very Important but Rarely Mastered)
+
+Ye senior-level questions hote hain 🔥
+
+Bitwise mostly flags handling me use hota hai.
+
+1️⃣ AND (&) | OR (|) | XOR (^) | NOT (~) | SHIFT LEFT (<<) | SHIFT RIGHT (>>) 
+SELECT 5 & 3;  -- 1
+SELECT 5 | 3;  -- 7
+SELECT 5 ^ 3;  -- 6
+SELECT ~5;
+SELECT 5 << 1;  -- 10 means mult by 2
+SELECT 8 >> 1;  -- 4 means divide by 2
+🔥 Real Production Use Case: Feature Flags
+
+Suppose:
+
+Permission	Value
+READ	1
+WRITE	2
+DELETE	4
+ADMIN	8
+
+User permissions = 5
+
+Binary:
+5 → 0101
+Means READ (1) + DELETE (4)
+
+Check permission:
+
+WHERE (permissions & 4) != 0
+
+🔥 Ye production-grade answer hai.
+
+🔥 Interview Question
+Why use bitwise instead of boolean columns?
+
+Answer:
+
+“Multiple boolean columns ke jagah single integer me compact permission store kar sakte hain, memory efficient hota hai aur faster comparison hota hai.”

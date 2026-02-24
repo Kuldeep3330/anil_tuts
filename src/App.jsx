@@ -6,6 +6,7 @@
 // import Parent from './aman/context_api_2/1.example/Parent'
 // import TodoApp from './aman/Reducer_2/3.Example/TodoApp'
 // import './App.css'
+import Parent from './aman/stateliftup/example1/Parent'
 import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
 // import GenerateTable from './sangam/phase 2/12.GenerateTable'
 // import Apple from './lecture1/Apple'
@@ -44,8 +45,8 @@ import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
 // import StarRating from './imran/8.StarRating'
 // import Day1 from './sangam/input_type/Day1'
 // import Parent from './aman/Reducer_2/4.Example/Parent'
-import Parent from './aman/Reducer_2/shoppingCart/Parent'
-import TodoApp from './aman/redux/1.Example/TodoApp'
+// import Parent from './aman/Reducer_2/shoppingCart/Parent'
+// import TodoApp from './aman/redux/1.Example/TodoApp'
 // import TodoApp from './aman/redux/1.Example/TodoApp'
 // import CountdownTimer from './sangam/phase 2/countDown/SimpleCountDown'
 // import Parent from './aman/context_api/2.Example/Parent'
@@ -157,10 +158,10 @@ function App() {
          */}
          {/* <TodoApp/> */}
          {/* <Parent/> */}
-         <Parent/>
+         {/* <Parent/> */}
          {/* <TodoApp/> */}
 
-
+          <Parent/>
       
     </>
   )
