@@ -31,7 +31,7 @@ function TempConvertor(){
             <h2>temperature convertor</h2>
             <div style={{display:"flex", flexDirection:"column", width:"200px"}}>
                 Celcius: <input type="number" value={celcius} onChange={(e) => handleCelsiusToFahrenheit(e.target.value)} placeholder="0" />
-            Fahrenheit: <input type="number" value={fahrenheit} onChange={(e) => handleFahrenheitToCelsius(e.target.value)} placeholder="32" />
+                Fahrenheit: <input type="number" value={fahrenheit} onChange={(e) => handleFahrenheitToCelsius(e.target.value)} placeholder="32" />
             </div>
         </div>
     )

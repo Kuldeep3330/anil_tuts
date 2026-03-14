@@ -8,6 +8,12 @@
 // import './App.css'
 import Parent from './aman/stateliftup/example1/Parent'
 import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
+import ProgressBar from './sangam/input_type/13.ProgressBar'
+import Tabs from './sangam/input_type/15.TabComponent'
+import FileExplorer from './sangam/phase3/fileExplorer/FileExplorer'
+import InfiniteScroll from './sangam/phase3/InfiniteScroll'
+import ToastContainer from './sangam/phase3/ToastContainer'
+import VirtualizedList from './sangam/phase3/VirtualizedList'
 // import GenerateTable from './sangam/phase 2/12.GenerateTable'
 // import Apple from './lecture1/Apple'
 // import Child from './lecture1/Child'
@@ -53,7 +59,26 @@ import ModalOverlay from './imran/ModalOverlay/4.ModalOverlay'
 // import Parent from './aman/Reducer/1.Example/Parent'
 // import Parent from './aman/context_api/2.Example/Parent'
 // import Parent from './aman/context_api/1.Example/Parent'
-
+import data from './sangam/phase3/fileExplorer/data.json'
+import TicTacToe from './sangam/phase3/TicTacToe'
+import DragAndDrop from './sangam/phase3/DragAndDrop'
+import Traffic from './sangam/phase3/traffic/Traffic'
+import MemoryGame from './sangam/phase3/MemoryGame'
+const LIST = Array.from({ length: 100000 }, (_, index) => index + 1);
+const initialData = {
+  Todo: [
+    "Design UI mockups",
+    "Set up project repository",
+    "Write unit test",
+    "Integrate payment gateway",
+  ],
+  "In Progress": ["Develop authentication flow", "Implement responsive design"],
+  Completed: [
+    "Set up CI/CD pipeline",
+    "Conduct code reviews",
+    "Deploy initial version to staging",
+  ],
+};
 function App() {
 //   const people = [
 //   {
@@ -161,7 +186,20 @@ function App() {
          {/* <Parent/> */}
          {/* <TodoApp/> */}
 
-          <Parent/>
+          {/* <Parent/> */}
+
+          {/* <ProgressBar/> */}
+          {/* <Tabs/> */}
+          {/* <ToastContainer/> */}
+          {/* <VirtualizedList list={LIST} height={400} width={300} itemHeight={35} /> */}
+          {/* <InfiniteScroll/> */}
+          {/* <FileExplorer folderData={data} /> */}
+          {/* <TicTacToe/> */}
+          {/* <DragAndDrop initialState={initialData} /> */}
+          {/* <Traffic/> */}
+          {/* <MemoryGame/> */}
+          
+            {/* <ProgressBar/> */}
       
     </>
   )

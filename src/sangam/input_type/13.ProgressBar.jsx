@@ -1,68 +1,57 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function ProgressBar() {
-  const [progress, setProgress] = useState(0);
-  const [loading, setLoading] = useState(false);
+const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-    let interval;
+const increase = () => {
+setProgress((prev) => (prev < 100 ? prev + 10 : 100));
+};
 
-    if (loading) {
-      interval = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= 100) {
-            clearInterval(interval);
-            setLoading(false);
-            return 100;
-          }
-          return prev + 1;
-        });
-      }, 50);
-    }
+const decrease = () => {
+setProgress((prev) => (prev > 0 ? prev - 10 : 0));
+};
 
-    return () => clearInterval(interval);
-  }, [loading]);
+const reset = () => {
+setProgress(0);
+};
 
-  const startProgress = () => {
-    setProgress(0);
-    setLoading(true);
-  };
+return (
+<div style={{ textAlign: "center", marginTop: "50px" }}> <h2>Progress Bar</h2>
 
-  return (
-    <div style={{ width: "400px", margin: "50px auto" }}>
-      <h2>Progress Bar</h2>
+```
+  {/* Progress Container */}
+  <div
+    style={{
+      width: "300px",
+      height: "30px",
+      border: "1px solid black",
+      margin: "20px auto",
+      borderRadius: "5px",
+      overflow: "hidden",
+    }}
+  >
+    {/* Filled Progress */}
+    <div
+      style={{
+        width: `${progress}%`,
+        height: "100%",
+        backgroundColor: "green",
+        transition: "0.3s ease",
+      }}
+    ></div>
+  </div>
 
-      <button onClick={startProgress} disabled={loading}>
-        {loading ? "Loading..." : "Start"}
-      </button>
+  <h3>{progress}%</h3>
 
-      <div
-        style={{
-          marginTop: "20px",
-          height: "25px",
-          background: "#eee",
-          borderRadius: "5px",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            height: "100%",
-            width: `${progress}%`,
-            background: "dodgerblue",
-            transition: "width 0.05s linear",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            fontSize: "12px",
-          }}
-        >
-          {progress}%
-        </div>
-      </div>
-    </div>
-  );
+  <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+    <button onClick={increase}>Increase</button>
+    <button onClick={decrease}>Decrease</button>
+    <button onClick={reset}>Reset</button>
+  </div>
+</div>
+// ```
+
+);
 }
 
 export default ProgressBar;

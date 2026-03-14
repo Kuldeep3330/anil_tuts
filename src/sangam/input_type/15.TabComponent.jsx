@@ -1,13 +1,12 @@
 import { useState } from "react";
 
 function Tabs() {
+  const [activeTab, setActiveTab] = useState(0);
   const tabs = [
     { label: "Home", content: "This is Home tab content 🏠" },
     { label: "Profile", content: "This is Profile tab content 👤" },
     { label: "Settings", content: "This is Settings tab content ⚙️" },
   ];
-
-  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <div style={{ width: "400px", margin: "50px auto" }}>
@@ -23,8 +22,8 @@ function Tabs() {
               padding: "10px 16px",
               border: "none",
               cursor: "pointer",
-              background: activeTab === index ? "#007bff" : "transparent",
-              color: activeTab === index ? "white" : "black",
+              // background: activeTab === index ? "#007bff" : "transparent",
+              // color: activeTab === index ? "white" : "black",
             }}
           >
             {tab.label}
@@ -41,3 +40,4 @@ function Tabs() {
 }
 
 export default Tabs;
+

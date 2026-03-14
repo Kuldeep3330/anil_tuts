@@ -133,7 +133,12 @@ createSlice combines action + reducer in one place.
 flow
 Component → dispatch(action) → reducer → store → re-render via useSelector
 
-
+question frontend ne request ki but server down
+ans:-If the server goes down, I handle it at multiple levels.
+First, I prevent crashes using centralized error handling and process-level handlers.
+Then I use a process manager like PM2 for automatic restarts.
+In production, a load balancer distributes traffic across multiple instances, so if one server fails, traffic shifts automatically.
+I also implement health checks and graceful shutdown to avoid request loss, and clients use retry mechanisms for temporary failures.
 How to measure performance?
 What is React Profiler?
 What causes re-render?
